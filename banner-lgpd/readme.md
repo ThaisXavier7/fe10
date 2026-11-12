@@ -3,7 +3,7 @@
 Este projeto é um banner de consentimento de cookies desenvolvido em conformidade com a LGPD, criado para simular o painel de privacidade do site da Clínica Vida.
 
  🌐 Link de Acesso
- [Acesse o projeto publicado no GitHub Pages](https://seu-usuario.github.io/nome-do-repositorio/)
+ [Acesse o projeto publicado no GitHub Pages](https://github.com/ThaisXavier7/fe10/settings/pages)
 
  📋 Sobre o Projeto
 O banner aparece automaticamente na primeira visita do usuário e oferece opções para gerenciar o rastreamento de dados:
