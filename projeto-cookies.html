@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .demo-ler {
+            background: #ffffff;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 20px;
+            max-width: 480px;
+        }
+
+        .demo-ler h3 {
+            font-size: 1rem;
+            margin-bottom: 10px;
+            color: #1e1b4b;
+        }
+
+        .demo-ler p {
+            font-size: 0.86rem;
+            color: #64748b;
+            margin-bottom: 14px;
+        }
+
+        .demo-ler button {
+            background: #7c3aed;
+            color: #ffffff;
+            border: none;
+            padding: 9px 18px;
+            border-radius: 8px;
+            font-weight: 700;
+            cursor: pointer;
+            font-size: 0.85rem;
+            margin-bottom: 10px;
+        }
+
+        .demo-ler .terminal {
+            background: #0b0518;
+            color: #a5f3fc;
+            padding: 10px 14px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.78rem;
+            min-height: 40px;
+            word-break: break-all;
+        }
+
+        .demo-apagar {
+            background: #ffffff;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 20px;
+            max-width: 480px;
+        }
+
+        .demo-apagar h3 {
+            font-size: 1rem;
+            margin-bottom: 10px;
+            color: #1e1b4b;
+        }
+
+        .demo-apagar label {
+            display: block;
+            font-weight: 700;
+            font-size: 0.82rem;
+            color: #334155;
+            margin-bottom: 4px;
+        }
+
+        .demo-apagar input {
+            width: 100%;
+            padding: 9px 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+        }
+
+        .demo-apagar .btns {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 10px;
+        }
+
+        .demo-apagar button {
+            background: #7c3aed;
+            color: #ffffff;
+            border: none;
+            padding: 9px 16px;
+            border-radius: 8px;
+            font-weight: 700;
+            cursor: pointer;
+            font-size: 0.82rem;
+        }
+
+        .demo-apagar .terminal {
+            background: #0b0518;
+            color: #a5f3fc;
+            padding: 10px 14px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.78rem;
+            min-height: 40px;
+        }
+
+        .demo-gravar {
+            background: #ffffff;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 20px;
+            max-width: 480px;
+        }
+
+        .demo-gravar h3 {
+            font-size: 1rem;
+            margin-bottom: 10px;
+            color: #1e1b4b;
+        }
+
+        .demo-gravar label {
+            display: block;
+            font-weight: 700;
+            font-size: 0.82rem;
+            color: #334155;
+            margin-bottom: 4px;
+        }
+
+        .demo-gravar input {
+            width: 100%;
+            padding: 9px 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+        }
+
+        .demo-gravar button {
+            background: #7c3aed;
+            color: #ffffff;
+            border: none;
+            padding: 9px 18px;
+            border-radius: 8px;
+            font-weight: 700;
+            cursor: pointer;
+            font-size: 0.85rem;
+            margin-bottom: 10px;
+        }
+
+        .demo-gravar .terminal {
+            background: #0b0518;
+            color: #a5f3fc;
+            padding: 10px 14px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.78rem;
+            min-height: 40px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="demo-ler">
+        <h3>Ler cookies</h3>
+        <p>Este componente deveria mostrar os cookies atuais.</p>
+        <button onclick="lerCookies()">Ler cookies agora</button>
+        <div class="terminal" id="demo-ler"></div>
+    </div>
+    <div class="demo-apagar">
+        <h3>Apagar tema</h3>
+        <label>Valor do tema</label>
+        <input type="text" id="demo-tema-apagar" value="escuro">
+        <div class="btns">
+            <button onclick="gravarTemaParaApagar()">Gravar tema</button>
+            <button onclick="apagarTema()">Apagar tema</button>
+        </div>
+        <div class="terminal" id="demo-tema-resultado"></div>
+    </div>
+    <div class="demo-gravar">
+        <h3>Gravar tema</h3>
+        <label>Valor do tema</label>
+        <input type="text" id="tema" value="escuro">
+        <button onclick="gravarTema()">Gravar tema</button>
+        <div class="terminal" id="demo-gravar-resultado"></div>
+    </div>
+
+</body>
+<script>
+    function lerCookies() {
+        var atual = document.cookie;   // ✅ CORRETO: "cookie" sem "s"
+        document.getElementById("demo-ler").innerHTML =
+            atual ? "Cookies: " + atual : "(nenhum cookie)";
+    }
+    function apagarTema() {
+        document.cookie = "tema=; max-age=0; path=/; SameSite=Lax";   // ✅ CORRETO
+        document.getElementById("demo-tema-resultado").innerHTML =
+            "Cookie tema apagado";
+    }
+
+    function gravarTemaParaApagar() {
+        var valor = document.getElementById("demo-tema-apagar").value;
+        document.cookie = "tema=" + encodeURIComponent(valor) + "; max-age=3600; path=/";
+        document.getElementById("demo-tema-resultado").innerHTML =
+            "Cookie tema=" + valor + " gravado";
+    }
+    function gravarTema() {
+        var valor = document.getElementById("tema").value;   // ✅ CORRETO: id="tema"
+        document.cookie = "tema=" + encodeURIComponent(valor) + "; max-age=3600; path=/";
+        document.getElementById("demo-gravar-resultado").innerHTML = "Cookie tema=" + valor + " gravado";
+    }
+</script>
+
+</html>

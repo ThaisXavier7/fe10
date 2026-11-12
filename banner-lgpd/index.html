@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Banner LGPD — Clínica Vida</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="conteudo">
+        <h1>Clínica Vida</h1>
+        <p>Atendimento humanizado e tecnologia de ponta.</p>
+        <button onclick="reabrirPreferencias()">Reabrir preferências de cookies</button>
+    </main>
+
+    <!-- Banner LGPD -->
+    <div class="banner" id="banner">
+        <h2>Valorizamos sua privacidade</h2>
+        <p>Escolha quais categorias de cookies deseja aceitar.</p>
+
+        <label><input type="checkbox" checked disabled> Essenciais (sempre ativos)</label>
+        <label><input type="checkbox" id="chk-analise"> Análise</label>
+        <label><input type="checkbox" id="chk-marketing"> Marketing</label>
+
+        <div class="banner-botoes">
+            <button onclick="aceitarTodos()">Aceitar todos</button>
+            <button onclick="aceitarApenasEssenciais()">Apenas essenciais</button>
+            <button onclick="salvarSelecao()">Salvar seleção</button>
+        </div>
+    </div>
+
+    <!-- Painel de status -->
+    <div class="painel-status" id="painel-status"></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
